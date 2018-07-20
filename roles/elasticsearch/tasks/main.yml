@@ -1,0 +1,13 @@
+---
+# tasks file for elasticsearch
+
+- name: test
+  command: echo test
+  tags:
+    - test
+
+- name: restart elasticsearch service
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: elasticsearch
